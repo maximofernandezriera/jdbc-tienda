@@ -1,3 +1,7 @@
+import org.json.JSONObject;
+
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -274,6 +278,26 @@ public class DBManager {
             return false;
         }
     }
+
+    // Una mejora con JSON.
+   /* public static boolean insertCliente(String nombre, String direccion) {
+        // Crear un objeto JSONObject
+        JSONObject cliente = new JSONObject();
+
+        // Agregar los datos del cliente al objeto JSONObject
+        cliente.put("nombre", nombre);
+        cliente.put("direccion", direccion);
+
+        // Escribir el objeto JSONObject en un archivo JSON
+        try (FileWriter file = new FileWriter("clientes.json")) {
+            file.write(cliente.toString());
+            file.flush();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }*/
 
     /**
      * Solicita a la BD modificar los datos de un cliente
